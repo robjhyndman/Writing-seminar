@@ -1,0 +1,455 @@
+---
+title: "Writing"
+author: "Rob J Hyndman"
+date: "23 March 2018"
+fontsize: 14pt
+output:
+  beamer_presentation:
+    fig_height: 5
+    fig_width: 8
+    highlight: tango
+    theme: metropolis
+header-includes:
+  - \usepackage{MonashWhite,soul}
+  - \usepackage[lf,t]{carlito}
+  - \graphicspath{{figs/}}
+---
+
+ “Writing for different audiences (including academic papers, reports for industry, media reports and writing grant applications)”.
+
+```{r setup1, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message=FALSE, warning=FALSE, cache=TRUE,
+  dev.args=list(bg=grey(0.9), pointsize=11))
+```
+
+
+# Writing papers
+
+## Stay organized
+
+\placefig{.5}{1.4}{width=4cm}{paperpile}
+\placefig{10.5}{1.2}{width=2cm}{mendeley}
+\placefig{10.2}{3.2}{width=2.2cm}{github}
+\vspace*{1.4cm}\fontsize{13}{15}\sf
+
+ * Use a reference manager such as Paperpile or Mendeley.
+ * Your papers should be in *self-contained* git repositories including bib files, Rmd/tex files.
+ * Be kind to future you. You will have amnesia.
+ * Document what package versions you used.
+
+\fontsize{13}{15}\sf\pause
+
+\begin{block}{}
+\texttt{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{r\ setup,\ include=FALSE\}}\newline
+\texttt{knitr::opts\_chunk\$set(echo=FALSE)\ writeLines(capture.output(sessionInfo()),}\newline
+\texttt{\hspace*{1cm}   "sessionInfo.txt")}\newline
+\texttt{\textasciigrave{}\textasciigrave{}\textasciigrave{}}
+\end{block}
+
+
+## Use Google Scholar for more than searching
+
+\placefig{0}{1.33}{width=12.8cm, height=13cm}{gsfront}
+
+\only<2>{\placefig{.6}{1.2}{width=2cm}{select}}
+
+## Use Google Scholar for more than searching
+
+\placefig{0}{1.33}{width=12.8cm, height=13cm}{gscholar}
+
+
+\only<2>{\begin{textblock}{7.7}(2,5)
+\begin{block}{}
+\begin{itemize}
+\item Set up a GS profile.
+\item Keep your GS profile up to date.
+\item Follow key authors.
+\end{itemize}
+\end{block}
+\end{textblock}}
+
+
+## Use Google Scholar for more than searching
+
+\placefig{0}{1.33}{width=12.8cm, height=13cm}{oddstream}
+
+\only<2>{\begin{textblock}{8.7}(3.2,2.4)
+\begin{block}{}
+\begin{itemize}
+\item Link GS to your reference manager.
+\item Keep everything you are ever likely to cite in your reference manager.
+\end{itemize}
+\end{block}
+\end{textblock}}
+
+
+## Use Google Scholar for more than searching
+
+\placefig{0}{1.33}{width=12.8cm, height=13cm}{gsfront}
+
+\only<2>{\placefig{2.2}{1.2}{width=2cm}{select}}
+
+
+## Use Google Scholar for more than searching
+
+\placefig{0}{1.33}{width=12.8cm, height=13cm}{gslibrary}
+
+
+## Use Google Scholar for more than searching
+\placefig{0}{1.33}{width=12.8cm, height=13cm}{gsfront}
+
+
+\only<2->{\placefig{2.4}{5.6}{width=2.4cm}{select}}
+
+
+## What to cite?
+
+\placefig{6.7}{0.}{width=6.2cm}{pileofbooks}\vspace*{0.6cm}
+
+\begin{textblock}{6.5}(0,1.5)
+\begin{itemize}
+\item Cite what is important.
+\item Cite (only) what is relevant.
+\item  Cite papers from the journal you intend to submit to.
+\item  Avoid lists of gratuitous references.
+\item  Include proper citations for all packages you use.
+\end{itemize}
+\end{textblock}\pause
+
+\vspace*{6.3cm}
+
+```r
+citation("packagename")
+```
+
+
+## Sight what you cite
+
+\placefig{7.4}{5.4}{width=5.4cm}{bibliography}\vspace*{0.6cm}\vspace*{-0.4cm}
+\begin{textblock}{12}(0.2,1.3)
+\begin{itemize}
+\item Every article cited should be sighted, \& preferably \rlap{read.}
+ \item  At the very least, check that the article cited really does say what you think it says.
+ \item  Type the reference information yourself.
+ \item  Don’t just cite what other people say about citations.
+ \item  Store accurate reference\newline info from the start.
+ \item  Give credit where it is due.
+
+ \only<2>{
+   \begin{itemize}
+   \item Diebold did not invent PITs.
+   \item Hyndman did not invent\newline exponential smoothing or ARIMA models.
+   \end{itemize}}
+\end{itemize}
+\end{textblock}
+
+## Names and titles
+\fontsize{14}{16}\sf
+
+ * Your name is your brand. Choose one and stick to it.\pause
+
+ * Titles should be informative, short and catchy (in that order).\pause
+
+    - Optimal forecast reconciliation for hierarchical and grouped time series through trace minimization
+    - Exploring the sources of uncertainty: why does bagging for time series forecasting work?
+    - Do levels of airborne grass pollen influence asthma hospital admissions?
+    - Unmasking the Theta method
+    - I am not an econometrician\pause
+
+ * Some journals don't like imaginative titles.
+
+## Some rules for good graphics
+\fontsize{14}{16}\sf
+
+1. Design graphics to highlight comparisons you want the reader to make.
+1. Choose scales to facilitate comparisons.
+1. Use a sensible aspect ratio. width:height of about 1.6, unless axes are on the same scale.
+1. Prepare graphics in final aspect ratio. Distorted fonts look awful.
+1. Use vector graphics such as eps or pdf.
+1. Clear labels and detailed captions.
+1. Avoid cluttered legends.
+1. Specify units.
+1. Label axes.
+
+## IJF graphics examples
+
+\placefig{0.5}{1.5}{height=8cm, width=15cm}{fig1}
+
+## IJF graphics examples
+
+\placefig{0.5}{1.5}{height=8cm, width=12cm}{fig2}
+
+## IJF graphics examples
+
+\placefig{0.5}{1.5}{height=8cm, width=15cm}{fig3}
+
+## Plagiarism
+
+\placefig{1.4}{1.35}{width=11.4cm, trim=0 3 0 0, clip=true}{plagiarism}\vspace*{6cm}
+
+ * Never plagiarise from other papers — not even sentence fragments. Use your own words.
+ * Don’t plagiarise from your own papers either.
+
+## Excuses
+\placefig{6.8}{0}{width=6.3cm, height=9.6cm}{htwal}
+\begin{textblock}{6.5}(0,1.4)
+\begin{itemize}
+\item There's not enough time
+\item I need to read more articles before I begin
+\item I need a new computer, a better printer, etc.
+\item I'm waiting for inspiration
+\end{itemize}
+\end{textblock}
+
+
+## How to write a lot
+\placefig{6.8}{0}{width=6.3cm, height=9.6cm}{htwal}
+\begin{textblock}{6.5}(0,1.4)
+\begin{itemize}
+\item Block out a regular writing time (e.g., 2 hours every morning).
+\item Write something every day.
+\item Set a word or paragraph goal for each session.
+\item Practice makes \st{perfect} better.
+\item Writing clarifies thinking.
+\item Build on a scaffold.
+\end{itemize}
+\end{textblock}
+
+
+
+
+
+
+## Words to avoid
+
+**According to Andrew Gelman**
+
+ * Note that
+ * Interestingly
+ * It is interesting to note that
+ * Obviously
+ * It is clear that
+ * very
+ * quite
+ * of course
+ * Notice that
+
+## Writing an abstract
+\fontsize{15}{19}\sf
+
+ 1. What did you do?
+ 2. Why did you do it? What question were you trying to answer?
+ 3. How did you do it? State your methods.
+ 4. What did you learn? State your major results.
+ 5. Why does it matter? Point out at least one significant implication.
+
+## Writing an abstract
+
+\placefig{0.6}{1.3}{width=11.5cm}{WCH_title}
+\placefig{0.6}{4.5}{width=11.5cm}{WCH_abstract}
+
+
+## Writing an abstract
+
+\begin{textblock}{5}(0,1.4)\fontsize{12}{15}\sf
+\begin{enumerate}
+\item What did you do?
+ \item Why did you do it? What question were you trying to answer?
+ \item How did you do it? State your methods.
+ \item What did you learn? State your major results.
+ \item Why does it matter? Point out at least one significant implication.
+\end{enumerate}
+\end{textblock}
+
+\placefig{5.35}{0.0}{height=9.5cm,width=11.5cm}{roy_abstract}
+
+## Writing an abstract
+
+ * Should be a stand-alone summary. It is the only thing most people will read.
+ * No references or citations.
+ * Write in the past tense.
+ * Be explicit, precise and concise.
+ * Stick to a single paragraph.
+ * Restrict background information to a sentence or two at most.
+ * Make sure that your abstract is consistent with what you reported in the paper.
+ * Write the abstract last
+
+## Who should be listed as an author?
+
+\fontsize{13}{15}\sf
+
+### Monash authorship policy
+
+… in all cases authorship must be based on making a substantial intellectual contribution to the work described and taking sole or joint responsibility for that contribution or, where appropriate, the work as a whole. Accordingly, authorship must be based upon a substantial contribution and responsibility for at least one, and usually more than one, of the following activities:
+
+ * Conception and design of the project;
+ * Analysis and interpretation of research data;
+ * Drafting significant parts of the work or critically revising it so as to contribute to the interpretation.
+
+## Who should be listed as an author?
+
+\fontsize{13}{14.5}\sf
+
+\begin{block}{Unacceptable inclusions of authorship}
+\begin{itemize}\parskip=0cm\itemsep=0cm
+\item Being head of department, holding other positions of authority, or personal friendship with the authors;
+\item Providing a routine technical contribution;
+\item Providing routine assistance in some aspects of the project;
+\item Acquisition of funding;
+\item General supervision of the research team;
+\item Providing data that has already been published or materials obtained from third parties (including the routine collation and provision of research source material).
+\end{itemize}
+\end{block}
+\pause
+
+\begin{alertblock}{}
+Acknowledge everyone who helped but is not an author.
+\end{alertblock}
+
+# Getting published
+
+## Finding the right journal
+
+\placefig{0}{1.35}{width=8cm,height=9.5cm}{ajm}
+\begin{textblock}{4.9}(7.7,1.5)\fontsize{12}{14}\sf
+\begin{itemize}
+\item Beware of academic phishing!
+ \item Consider journals of papers you cite.
+ \item  Check impact factors and journal rankings.
+ \item  Aim as high as possible, but be realistic.
+\end{itemize}
+\end{textblock}
+
+## How do journals work?
+
+\placefig{6.4}{1.35}{width=8cm,height=8.25cm}{Journal_Flowchart}
+
+\begin{textblock}{5.4}(0.5,1.6)
+\begin{block}{}
+Editor-in-Chief
+
+Editors
+
+Associate Editors
+
+Reviewers
+\end{block}\vspace*{.8cm}
+
+\only<2>{\begin{alertblock}{Possible outcomes}
+\begin{enumerate}
+\item Accept
+\item Revise and resubmit
+\item Reject and resubmit
+\item Reject
+\end{enumerate}
+\end{alertblock}}
+
+\end{textblock}
+
+
+## Submitting to journals
+
+ * Don't be too fussed about journal styles. Most journals are much more lenient than the guide to authors suggests.
+ * Use biblatex which makes it easy to change bibliographic styles if necessary.
+ * Don't bother with long cover letters.
+ * Don't grovel.
+ * Check the submission when requested.
+
+
+## An IJF rejection letter
+
+###
+\parskip=2ex
+Thank you for this submission, but as it consists entirely of the IJF author guidelines, it is not suitable for publication in the IJF. We publish original research, not author guidelines. Perhaps the *Journal for Guidelines* would be an appropriate outlet.
+
+In future, when you are asked to check the pdf of your paper, you might find it useful to actually do so, rather than just claim to have done so. That way, you will avoid this kind of mistake.
+
+## Common reasons for rejection at the IJF
+
+ * Sending it to the wrong journal.
+ * Poor literature review
+ * No new ideas
+ * Limited empirical evaluation
+ * Outrageous claims
+
+## Dealing with reviewer reports
+
+ * Put the reviews aside for a couple of days until you calm down.
+ * Poor reviews indicate poor editors.
+ * The best journals have the best reviewers.
+ * If the reviewers misunderstood your paper, then it is not explained clearly enough.
+ * Unless you strongly disagree, do what the reviewers have requested.
+ * Make the changes, even if the paper has been rejected and you are sending it to a new journal.
+
+## Writing responses to reviewer reports
+\fontsize{14}{16}\sf
+
+If the journal allows a resubmission, you need to write a response to the reviewers.\vspace*{10cm}
+
+\placefig{1.4}{3}{width=9cm}{responses}
+
+## Writing responses to reviewer reports
+\fontsize{14}{16}\sf
+
+If the journal allows a resubmission, you need to write a response to the reviewers.
+
+\fontsize{12}{13}\sf
+
+###
+ * No grovelling
+ * Cut and paste reviewer comments into response, then add your own comments beneath in a different colour/font.
+ * Give page/paragraph numbers for all changes.
+ * Respond to *all* the points with a simple but specific explanation of what you have done.
+ * If you strongly disagree, you need to persuade the editor  (not the reviewer) of your perspective.
+ * Exception: bad editors sometimes act as rubber stamps for reviewers.
+ * Keep your response as short as possible. Respect the editor's time.
+
+# Reviewing papers
+
+## Becoming a reviewer
+
+\placefig{6}{0}{width=6.8cm}{highlighter}
+
+\begin{textblock}{6}(0.3,1.4)
+\begin{enumerate}
+\item Write good articles
+\item Get them published
+\end{enumerate}
+\end{textblock}\vspace*{3cm}
+
+\pause
+
+### Why review?
+
+* You learn a lot.
+* You get better known by the research leaders in your area.
+* You get to see the latest research before everyone else.
+* The scholarly publishing system depends on it.
+
+## Writing a good review
+
+\fontsize{12}{13}\sf
+
+1. What is the paper about?
+2. What is the gap that it is trying to solve?
+3. How does it address the gap? Do the methods/theory work, check what is promised
+4. What sort of application is discussed? Is it contemporary, and interesting data problem, or data pulled from another paper, and a bit tired?
+5. How well does the title/abstract describe the main contributions of the paper?
+6. Is the introduction readable? If you have trouble understanding the problem from the intro there will be many other readers in the same situation
+7. Is the solution original? Are there other published papers on the same problem? Have they been cited appropriately? Are they missing major existing work?
+
+## Writing a good review
+
+1. Provide a general summary of the paper and its contribution.
+2. Describe the major problems that need addressing.
+3. List minor corrections required.
+
+###
+* Do not include a recommendation about whether to publish in the report itself.
+* Be the reviewer you would like to have.
+
+# Industry reports
+
+# Media reports
+
+# Grant applications
