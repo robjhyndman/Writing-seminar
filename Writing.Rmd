@@ -1,73 +1,151 @@
 ---
 title: "Writing"
 author: "Rob J Hyndman"
-date: "23 March 2018"
+date: "ACEMS Mentoring Seminar"
 fontsize: 14pt
 output:
   beamer_presentation:
-    fig_height: 5
-    fig_width: 8
+    fig_height: 4.33
+    fig_width: 6
     highlight: tango
+    keep_tex: no
+    incremental: no
     theme: metropolis
-header-includes:
-  - \usepackage{MonashWhite,soul}
-  - \usepackage[lf,t]{carlito}
-  - \graphicspath{{figs/}}
+    includes:
+      in_header: preamble.tex
 ---
-
- “Writing for different audiences (including academic papers, reports for industry, media reports and writing grant applications)”.
 
 ```{r setup1, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message=FALSE, warning=FALSE, cache=TRUE,
   dev.args=list(bg=grey(0.9), pointsize=11))
 ```
 
+# References
 
-# Writing papers
+## Managing references
 
-## Stay organized
+\placefig{7.4}{1.4}{width=5.1cm}{Mendeley}
 
-\placefig{.5}{1.4}{width=4cm}{paperpile}
-\placefig{10.5}{1.2}{width=2cm}{mendeley}
-\placefig{10.2}{3.2}{width=2.2cm}{github}
-\vspace*{1.4cm}\fontsize{13}{15}\sf
+\begin{textblock}{6.}(.4,1.2)
+\begin{alertblock}{Mendeley}\fontsize{11}{12}\sf
+\begin{itemize}\itemsep=1.5mm
+\item[\textcolor{white}{\ding{229}}] Free and on all operating systems
+\item[\textcolor{white}{\ding{229}}] Web-version and local version synced
+\item[\textcolor{white}{\ding{229}}] Browser extension for adding papers/books
+\item[\textcolor{white}{\ding{229}}] Attach notes and annotations to papers.
+\item[\textcolor{white}{\ding{229}}] Works with Word, LibreOffice or LaTeX.
+\item[\textcolor{white}{\ding{229}}] Generate bibliography automatically
+\item[\textcolor{white}{\ding{229}}] Handles all formatting for you.
+\end{itemize}
+\end{alertblock}
+\end{textblock}
 
- * Use a reference manager such as Paperpile or Mendeley.
- * Your papers should be in *self-contained* git repositories including bib files, Rmd/tex files.
- * Be kind to future you. You will have amnesia.
- * Document what package versions you used.
-
-\fontsize{13}{15}\sf\pause
-
-\begin{block}{}
-\texttt{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{r\ setup,\ include=FALSE\}}\newline
-\texttt{knitr::opts\_chunk\$set(echo=FALSE)\ writeLines(capture.output(sessionInfo()),}\newline
-\texttt{\hspace*{1cm}   "sessionInfo.txt")}\newline
-\texttt{\textasciigrave{}\textasciigrave{}\textasciigrave{}}
+\begin{textblock}{5.3}(7.1,6.2)\fontsize{12}{13}\sf
+\begin{block}{To install:}
+\begin{itemize}
+\item Set up account at \url{www.mendeley.com}
+\item Download from \url{www.mendeley.com}
+\end{itemize}
 \end{block}
+\end{textblock}
 
+## Managing references
+
+\placefig{6.7}{3}{width=6.1cm}{Zotero}
+
+\begin{textblock}{6.}(.4,1.2)
+\begin{alertblock}{Zotero}\fontsize{11}{12}\sf
+\begin{itemize}\itemsep=1.5mm
+\item[\textcolor{white}{\ding{229}}] Free and on all operating systems
+\item[\textcolor{white}{\ding{229}}] Web-version and local version synced
+\item[\textcolor{white}{\ding{229}}] Browser extension for adding papers/books
+\item[\textcolor{white}{\ding{229}}] Attach notes and annotations to papers.
+\item[\textcolor{white}{\ding{229}}] Works with Word, LibreOffice or LaTeX.
+\item[\textcolor{white}{\ding{229}}] Generate bibliography automatically
+\item[\textcolor{white}{\ding{229}}] Handles all formatting for you.
+\end{itemize}
+\end{alertblock}
+\end{textblock}
+
+\begin{textblock}{5.3}(7.1,6.2)\fontsize{12}{13}\sf
+\begin{block}{To install:}
+\begin{itemize}
+\item Set up account at \url{www.zotero.org}
+\item Download from \url{www.zotero.org}
+\end{itemize}
+\end{block}
+\end{textblock}
+
+## Managing references
+
+\placefig{6.7}{2}{width=6.1cm}{paperpile}
+
+\begin{textblock}{6.}(.4,1.2)
+\begin{alertblock}{Paperpile}\fontsize{12}{12}\sf
+\begin{itemize}\itemsep=1.mm
+\item[\textcolor{white}{\ding{229}}] \$3 per month and runs on Google Chrome
+\item[\textcolor{white}{\ding{229}}] Papers stored on Google Drive
+\item[\textcolor{white}{\ding{229}}] Browser extension for adding papers/books
+\item[\textcolor{white}{\ding{229}}] Works with Google Docs or LaTeX.
+\item[\textcolor{white}{\ding{229}}] Generate bibliography automatically
+\item[\textcolor{white}{\ding{229}}] Handles all formatting for you.
+\item[\textcolor{white}{\ding{229}}] Amazingly fast
+\end{itemize}
+\end{alertblock}
+\end{textblock}
+
+\begin{textblock}{5.3}(7.1,5.6)\fontsize{12}{13}\sf
+\begin{block}{To install:}
+\begin{itemize}
+\item Set up account at \url{paperpile.com}
+\item Download Google chrome browser extension
+\end{itemize}
+\end{block}
+\end{textblock}
+
+## What to cite?
+
+\placefig{6.7}{0.}{width=6.2cm}{pileofbooks}\vspace*{0.6cm}
+
+\begin{textblock}{6.5}(0,1.5)
+\begin{itemize}\parskip=0cm
+\item Cite what is important.
+\item Cite (only) what is relevant.
+%\item  Cite papers from the journal you intend to submit to.
+\item  Avoid lists of gratuitous references.
+\item  Include proper citations for all packages and software you use.
+\end{itemize}
+\end{textblock}\pause
+
+\vspace*{6.3cm}
+
+```r
+citation("packagename")
+```
+
+## Sight what you cite
+
+\placefig{7.4}{5.4}{width=5.4cm}{bibliography}\vspace*{0.6cm}\vspace*{-0.4cm}
+\begin{textblock}{12}(0.2,1.3)
+\begin{itemize}\parskip=0cm
+\item Every article cited should be sighted, \& preferably \rlap{read.}
+ \item  At the very least, check that the article cited really does say what you think it says.
+ \item  Type the reference information yourself.
+ \item  Don’t just cite what other people say about citations.
+ \item  Store accurate reference\newline info from the start.
+ \item  Give credit where it is due.
+
+ \only<2>{
+   \begin{itemize}
+   \item Diebold did not invent PITs.
+   \item Hyndman did not invent\newline exponential smoothing or\newline ARIMA models.
+   \end{itemize}}
+\end{itemize}
+\end{textblock}
 
 ## Use Google Scholar for more than searching
 
 \placefig{0}{1.33}{width=12.8cm, height=13cm}{gsfront}
-
-\only<2>{\placefig{.6}{1.2}{width=2cm}{select}}
-
-## Use Google Scholar for more than searching
-
-\placefig{0}{1.33}{width=12.8cm, height=13cm}{gscholar}
-
-
-\only<2>{\begin{textblock}{7.7}(2,5)
-\begin{block}{}
-\begin{itemize}
-\item Set up a GS profile.
-\item Keep your GS profile up to date.
-\item Follow key authors.
-\end{itemize}
-\end{block}
-\end{textblock}}
-
 
 ## Use Google Scholar for more than searching
 
@@ -82,6 +160,32 @@ knitr::opts_chunk$set(echo = FALSE, message=FALSE, warning=FALSE, cache=TRUE,
 \end{block}
 \end{textblock}}
 
+## Use Google Scholar for more than searching
+
+\placefig{0}{1.33}{width=12.8cm, height=13cm}{oddstream}
+
+\only<2>{\placefig{2.6}{6.4}{width=2cm}{select}}
+
+
+## Use Google Scholar for more than searching
+
+\placefig{0}{1.33}{width=12.8cm, height=13cm}{gscholar}
+
+\only<2>{\begin{textblock}{8.7}(3.2,6.4)
+\begin{block}{}
+\begin{itemize}
+\item Create your GS profile once you have (at least) one paper.
+\item Follow key authors in your area.
+\end{itemize}
+\end{block}
+\end{textblock}}
+
+## Use Google Scholar for more than searching
+
+\placefig{0}{1.33}{width=12.8cm, height=13cm}{oddstream}
+
+\only<2>{\placefig{.9}{7.3}{width=2cm}{select}}
+
 
 ## Use Google Scholar for more than searching
 
@@ -89,150 +193,223 @@ knitr::opts_chunk$set(echo = FALSE, message=FALSE, warning=FALSE, cache=TRUE,
 
 \only<2>{\placefig{2.2}{1.2}{width=2cm}{select}}
 
-
 ## Use Google Scholar for more than searching
 
 \placefig{0}{1.33}{width=12.8cm, height=13cm}{gslibrary}
 
-
 ## Use Google Scholar for more than searching
 \placefig{0}{1.33}{width=12.8cm, height=13cm}{gsfront}
-
 
 \only<2->{\placefig{2.4}{5.6}{width=2.4cm}{select}}
 
 
-## What to cite?
+# Languages and editors
 
-\placefig{6.7}{0.}{width=6.2cm}{pileofbooks}\vspace*{0.6cm}
+##
 
-\begin{textblock}{6.5}(0,1.5)
-\begin{itemize}
-\item Cite what is important.
-\item Cite (only) what is relevant.
-\item  Cite papers from the journal you intend to submit to.
-\item  Avoid lists of gratuitous references.
-\item  Include proper citations for all packages you use.
+\placefig{.3}{.1}{width=3cm}{latex_logo}
+
+\begin{textblock}{5.8}(6.6,.3)\fontsize{13}{13}\sf
+\begin{alertblock}{Document processing}
+\begin{itemize}\itemsep=1.mm
+\item[\textcolor{white}{\ding{229}}] Free and open-source
+\item[\textcolor{white}{\ding{229}}] Available on all operating systems
+\item[\textcolor{white}{\ding{229}}] Used by every mathematical publisher
+\item[\textcolor{white}{\ding{229}}] Separate content from style
+\item[\textcolor{white}{\ding{229}}] Format complex equations
+\item[\textcolor{white}{\ding{229}}] Automatic numbering
+\item[\textcolor{white}{\ding{229}}] Automatic bibliography
+\item[\textcolor{white}{\ding{229}}] Monash thesis template available
 \end{itemize}
-\end{textblock}\pause
-
-\vspace*{6.3cm}
-
-```r
-citation("packagename")
-```
-
-
-## Sight what you cite
-
-\placefig{7.4}{5.4}{width=5.4cm}{bibliography}\vspace*{0.6cm}\vspace*{-0.4cm}
-\begin{textblock}{12}(0.2,1.3)
-\begin{itemize}
-\item Every article cited should be sighted, \& preferably \rlap{read.}
- \item  At the very least, check that the article cited really does say what you think it says.
- \item  Type the reference information yourself.
- \item  Don’t just cite what other people say about citations.
- \item  Store accurate reference\newline info from the start.
- \item  Give credit where it is due.
-
- \only<2>{
-   \begin{itemize}
-   \item Diebold did not invent PITs.
-   \item Hyndman did not invent\newline exponential smoothing or ARIMA models.
-   \end{itemize}}
-\end{itemize}
+\end{alertblock}
 \end{textblock}
+
+\begin{textblock}{5.5}(.4,4.5)
+\begin{block}{To install:}
+\begin{itemize}
+\item Download MikTeX, MacTeX or TeXlive.
+\end{itemize}
+\end{block}
+\end{textblock}
+
+## RMarkdown
+
+\begin{textblock}{5.5}(6.5,1.3)
+\begin{alertblock}{RMarkdown}
+\begin{itemize}\itemsep=1.mm
+\item[\textcolor{white}{\ding{229}}] Combines R and LaTeX into one system
+\item[\textcolor{white}{\ding{229}}] Reproducible research
+\item[\textcolor{white}{\ding{229}}] Monash PhD template
+\item[\textcolor{white}{\ding{229}}] Monash working paper template
+\item[\textcolor{white}{\ding{229}}] Templates for most statistics journals
+\item[\textcolor{white}{\ding{229}}] Mandatory for my students
+\end{itemize}
+\end{alertblock}
+\end{textblock}
+
+\begin{textblock}{5}(.6,1.3)
+\begin{block}{}
+\includegraphics[width=5cm]{mythesis}
+\end{block}
+\end{textblock}
+
+
+## Microsoft Word
+
+\placefig{0}{1.1}{width=14cm, height=9cm}{problems}
+
+\only<2>{
+  \begin{textblock}{9}(0.2,1.)
+  \begin{block}{}
+  \begin{itemize}\tightlist
+  \item Impossible to do proper version control
+  \item Poor formatting of equations
+  \item Impossible to make reproducible
+  \item More difficult to automate cross-referencing, numbering
+  \item Files more likely to be corrupted
+  \end{itemize}\end{block}\end{textblock}}
+
+## Editors
+
+Find a good text editor and learn how to use it.
+
+ * regex search and replace
+ * spell checking
+ * syntax highlighting
+ * linting
+
+### Some good editors
+\begin{itemize}\tightlist
+ \item[\ding{229}] Sublimetext
+ \item[\ding{229}] Atom
+ \item[\ding{229}] RStudio
+ \item[\ding{229}] TeXstudio
+\end{itemize}
+
+# Reproducibility & version control
+
+
+## Reproducibility
+
+\begin{textblock}{7.5}(0.2,1.2)\fontsize{14}{15}\sf
+\begin{block}{Not reproducible:}
+\begin{itemize}\tightlist
+\item Data edited in a spreadsheet
+\item Click and point analysis
+\item Copy and paste graphs and tables
+\item Tables typed by hand
+\end{itemize}
+\end{block}
+\begin{alertblock}{Reproducible}
+\begin{itemize}\tightlist
+\item All data edits scripted
+\item All analysis scripted
+\item Graphs and tables automatically pulled in to the document
+\item Tables generated with scripts
+\end{itemize}
+\end{alertblock}
+\end{textblock}
+
+\placefig{8}{1.3}{width=4.8cm}{2g9914}
+
+
+## Reproducibility
+
+\begin{alertblock}{}
+Someone should be able to reproduce your document without having to guess what software you had installed, what versions, which files do what, etc.
+\end{alertblock}\vspace*{-0.2cm}\pause
+
+ * Stay organized.
+ * Your documents should be in *self-contained* repositories including bib files, Rmd/tex files.
+ * Be kind to future you. You will have amnesia.
+ * Track software versions
+
+\fontsize{12}{12}\sf\vspace*{0.2cm}\pause
+
+\begin{block}{}
+\texttt{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{r\ setup,\ include=FALSE\}}\newline
+\texttt{knitr::opts\_chunk\$set(echo=FALSE)\ writeLines(capture.output(sessionInfo()),}\newline
+\texttt{\hspace*{1cm}   "sessionInfo.txt")}
+\end{block}
+
+
+## Version control
+
+\full{live-dangerously}
+
+## Version control
+\fontsize{13}{15}\sf
+
+ * `thesis_v1`, `thesis_v2`, etc., is not adequate version control.
+ * You need to track changes over time, have a *remote* repository, and be able to roll back as required.
+ * Your repository should contain *everything* required to produce your document including computer code, references, writing.
+ * Your repository should have an obvious structure and be fully documented.
+ * **Github** solves these problems
+ * Read "Happy git with R": `happygitwithr.com`
+
+\placefig{10.5}{7.5}{width=2.2cm}{github}
+
+## Version control with git
+
+ * RStudio integrates with github, so version control is built in.
+ * But github can be used with *any* text-based language including Matlab, Stata, Python, LaTeX, R, Rmarkdown, markdown, etc.
+ * Git allows you to:
+     - track changes
+     - experiment in branches
+     - undo
+ * Github provides:
+    - backup and restore
+    - synchronisation
+
+
+\placefig{8.5}{5.5}{width=4.2cm}{github}
+
+# Writing a paper or thesis
 
 ## Names and titles
 \fontsize{14}{16}\sf
 
  * Your name is your brand. Choose one and stick to it.\pause
-
  * Titles should be informative, short and catchy (in that order).\pause
-
     - Optimal forecast reconciliation for hierarchical and grouped time series through trace minimization
     - Exploring the sources of uncertainty: why does bagging for time series forecasting work?
     - Do levels of airborne grass pollen influence asthma hospital admissions?
     - Unmasking the Theta method
     - I am not an econometrician\pause
-
  * Some journals don't like imaginative titles.
 
-## Some rules for good graphics
-\fontsize{14}{16}\sf
 
-1. Design graphics to highlight comparisons you want the reader to make.
-1. Choose scales to facilitate comparisons.
-1. Use a sensible aspect ratio. width:height of about 1.6, unless axes are on the same scale.
-1. Prepare graphics in final aspect ratio. Distorted fonts look awful.
-1. Use vector graphics such as eps or pdf.
-1. Clear labels and detailed captions.
-1. Avoid cluttered legends.
-1. Specify units.
-1. Label axes.
+## Who should be listed as an author?
 
-## IJF graphics examples
+\fontsize{13}{15}\sf
 
-\placefig{0.5}{1.5}{height=8cm, width=15cm}{fig1}
+### Monash authorship policy
 
-## IJF graphics examples
+… in all cases authorship must be based on making a substantial intellectual contribution to the work described and taking sole or joint responsibility for that contribution or, where appropriate, the work as a whole. Accordingly, authorship must be based upon a substantial contribution and responsibility for at least one, and usually more than one, of the following activities:
 
-\placefig{0.5}{1.5}{height=8cm, width=12cm}{fig2}
+ * Conception and design of the project;
+ * Analysis and interpretation of research data;
+ * Drafting significant parts of the work or critically revising it so as to contribute to the interpretation.
 
-## IJF graphics examples
+## Who should be listed as an author?
 
-\placefig{0.5}{1.5}{height=8cm, width=15cm}{fig3}
+\fontsize{13}{14.5}\sf
 
-## Plagiarism
-
-\placefig{1.4}{1.35}{width=11.4cm, trim=0 3 0 0, clip=true}{plagiarism}\vspace*{6cm}
-
- * Never plagiarise from other papers — not even sentence fragments. Use your own words.
- * Don’t plagiarise from your own papers either.
-
-## Excuses
-\placefig{6.8}{0}{width=6.3cm, height=9.6cm}{htwal}
-\begin{textblock}{6.5}(0,1.4)
-\begin{itemize}
-\item There's not enough time
-\item I need to read more articles before I begin
-\item I need a new computer, a better printer, etc.
-\item I'm waiting for inspiration
+\begin{block}{Unacceptable inclusions of authorship}
+\begin{itemize}\parskip=0cm\itemsep=0cm
+\item Being head of department, holding other positions of authority, or personal friendship with the authors;
+\item Providing a routine technical contribution;
+\item Providing routine assistance in some aspects of the project;
+\item Acquisition of funding;
+\item General supervision of the research team;
+\item Providing data that has already been published or materials obtained from third parties (including the routine collation and provision of research source material).
 \end{itemize}
-\end{textblock}
+\end{block}
+\pause
 
-
-## How to write a lot
-\placefig{6.8}{0}{width=6.3cm, height=9.6cm}{htwal}
-\begin{textblock}{6.5}(0,1.4)
-\begin{itemize}
-\item Block out a regular writing time (e.g., 2 hours every morning).
-\item Write something every day.
-\item Set a word or paragraph goal for each session.
-\item Practice makes \st{perfect} better.
-\item Writing clarifies thinking.
-\item Build on a scaffold.
-\end{itemize}
-\end{textblock}
-
-
-
-
-
-
-## Words to avoid
-
-**According to Andrew Gelman**
-
- * Note that
- * Interestingly
- * It is interesting to note that
- * Obviously
- * It is clear that
- * very
- * quite
- * of course
- * Notice that
+\begin{alertblock}{}
+Acknowledge everyone who helped but is not an author.
+\end{alertblock}
 
 ## Writing an abstract
 \fontsize{15}{19}\sf
@@ -274,37 +451,52 @@ citation("packagename")
  * Make sure that your abstract is consistent with what you reported in the paper.
  * Write the abstract last
 
-## Who should be listed as an author?
-
-\fontsize{13}{15}\sf
-
-### Monash authorship policy
-
-… in all cases authorship must be based on making a substantial intellectual contribution to the work described and taking sole or joint responsibility for that contribution or, where appropriate, the work as a whole. Accordingly, authorship must be based upon a substantial contribution and responsibility for at least one, and usually more than one, of the following activities:
-
- * Conception and design of the project;
- * Analysis and interpretation of research data;
- * Drafting significant parts of the work or critically revising it so as to contribute to the interpretation.
-
-## Who should be listed as an author?
-
-\fontsize{13}{14.5}\sf
-
-\begin{block}{Unacceptable inclusions of authorship}
-\begin{itemize}\parskip=0cm\itemsep=0cm
-\item Being head of department, holding other positions of authority, or personal friendship with the authors;
-\item Providing a routine technical contribution;
-\item Providing routine assistance in some aspects of the project;
-\item Acquisition of funding;
-\item General supervision of the research team;
-\item Providing data that has already been published or materials obtained from third parties (including the routine collation and provision of research source material).
+## How to write a lot
+\placefig{6.8}{0}{width=6.3cm, height=9.6cm}{htwal}
+\begin{textblock}{6.5}(0,1.4)
+\begin{itemize}\tightlist
+\item Block out a regular writing time (e.g., 2 hours every morning).
+\item Write something every day.
+\item Set a word or paragraph goal for each session.
+\item Practice makes \st{perfect} better.
+\item Writing clarifies thinking.
+\item Build on a scaffold.
 \end{itemize}
-\end{block}
-\pause
+\end{textblock}
 
-\begin{alertblock}{}
-Acknowledge everyone who helped but is not an author.
-\end{alertblock}
+## Excuses
+\placefig{6.8}{0}{width=6.3cm, height=9.6cm}{htwal}
+\begin{textblock}{6.5}(0,1.4)
+\begin{itemize}\tightlist
+\item There's not enough time
+\item I need to read more articles before I begin
+\item I need a new computer, a better printer, etc.
+\item I'm waiting for inspiration
+\end{itemize}
+\end{textblock}
+
+## Words to avoid
+
+**According to Andrew Gelman**
+
+ * Note that
+ * Interestingly
+ * It is interesting to note that
+ * Obviously
+ * It is clear that
+ * very
+ * quite
+ * of course
+ * Notice that
+
+
+## Plagiarism
+
+\placefig{1.4}{1.35}{width=11.4cm, trim=0 3 0 0, clip=true}{plagiarism}\vspace*{6cm}
+
+ * Never plagiarise from other papers — not even sentence fragments. Use your own words.
+ * Don’t plagiarise from your own papers either.
+
 
 # Getting published
 
@@ -372,6 +564,8 @@ In future, when you are asked to check the pdf of your paper, you might find it 
  * Limited empirical evaluation
  * Outrageous claims
 
+# Reviewer reports
+
 ## Dealing with reviewer reports
 
  * Put the reviews aside for a couple of days until you calm down.
@@ -382,6 +576,7 @@ In future, when you are asked to check the pdf of your paper, you might find it 
  * Make the changes, even if the paper has been rejected and you are sending it to a new journal.
 
 ## Writing responses to reviewer reports
+
 \fontsize{14}{16}\sf
 
 If the journal allows a resubmission, you need to write a response to the reviewers.\vspace*{10cm}
@@ -403,8 +598,6 @@ If the journal allows a resubmission, you need to write a response to the review
  * If you strongly disagree, you need to persuade the editor  (not the reviewer) of your perspective.
  * Exception: bad editors sometimes act as rubber stamps for reviewers.
  * Keep your response as short as possible. Respect the editor's time.
-
-# Reviewing papers
 
 ## Becoming a reviewer
 
@@ -448,8 +641,75 @@ If the journal allows a resubmission, you need to write a response to the review
 * Do not include a recommendation about whether to publish in the report itself.
 * Be the reviewer you would like to have.
 
-# Industry reports
 
-# Media reports
+# Writing grant applications
 
-# Grant applications
+## Writing grant applications
+\fontsize{12.5}{13}\sf
+
+\begin{multicols}{2}
+\begin{itemize}\tightlist
+\item Read the guidelines and rules and follow them.
+\item Read successful grant applications in area.
+\item Grab attention in the first paragraph
+\item Clearly specify aims
+\item Sell the project --- why should someone spend money on you?
+\item Be clear and succinct
+\item Write for a non-expert audience. Decision- makers probably not in your research field.
+\item Explain project management and timelines
+\item Demonstrate credibility
+\item Explain role of every person on the grant and why they are needed.
+\item Build partnerships
+\item Ensure budget is realistic and justifiable.
+\item Allow time for many drafts.
+\item Find peers to review it.
+\end{itemize}
+\end{multicols}
+
+# Writing industry and media reports
+
+## Industry reports
+\fontsize{13}{15}\sf
+
+\begin{itemize}\tightlist
+\item Reproducibility is crucial. The data will likely change several times during the project.
+\item Fully document what you did.
+\item Write in layers:
+  \begin{enumerate}
+  \item Executive summary
+  \item Introduction
+  \item Body of report
+  \item Appendices
+  \end{enumerate}
+   Each layer provides more details.
+\item Most people will only read the executive summary.
+\item Highlight recommendations in the first few pages.
+\item Remember the readers may not be experts.
+\item Include contact information somewhere.
+\end{itemize}
+
+## Media reports
+\fontsize{14}{15}\sf
+
+\begin{itemize}\tightlist\itemsep=1mm
+\item Find a headline hook
+\item Write in layers
+  \begin{enumerate}
+    \item  Headline
+    \item First paragraph provides a summary
+    \item Next paragraphs provide more detail
+    \item Finish with contact information
+  \end{enumerate}
+\item Inverted pyramid style: details in descending order of importance.
+\item Avoid jargon, cliches and slang.
+\item Don't over-simplify
+\item Don't claim more than is true.
+\item Ask your media office for help.
+\end{itemize}
+
+## Slides and resources
+
+\fontsize{19}{36}\sf
+
+###
+`robjhyndman.com/seminars/Writing`
