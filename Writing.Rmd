@@ -1,5 +1,5 @@
 ---
-title: "Writing"
+title: "Writing for Researchers"
 author: "Rob J Hyndman"
 date: "ACEMS Mentoring Seminar"
 fontsize: 14pt
