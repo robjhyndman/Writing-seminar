@@ -411,6 +411,15 @@ Someone should be able to reproduce your document without having to guess what s
 Acknowledge everyone who helped but is not an author.
 \end{alertblock}
 
+## Structuring a paper
+
+ * **Abstract**: A stand alone summary. Most readers will only read this.
+ * **Keywords**: How will people find your paper? Don't repeat words in title
+ * **Introduction**: Set the scene. Why should we care?
+ * ***Main sections***: Tell the story
+ * **Conclusion**: What did you learn? Future research issues.
+ * **Appendixes**: For readers that want the nitty gritty details.
+
 ## Writing an abstract
 \fontsize{15}{19}\sf
 
@@ -450,6 +459,8 @@ Acknowledge everyone who helped but is not an author.
  * Restrict background information to a sentence or two at most.
  * Make sure that your abstract is consistent with what you reported in the paper.
  * Write the abstract last
+
+
 
 ## How to write a lot
 \placefig{6.8}{0}{width=6.3cm, height=9.6cm}{htwal}
